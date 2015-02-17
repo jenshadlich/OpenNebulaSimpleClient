@@ -1,18 +1,16 @@
 package de.jeha.opennebula.client;
 
-import org.apache.xmlrpc.client.XmlRpcClient;
 
 public class SimpleClient {
-    private final String basicAuth;
-    private final String endPointUrl;
-    private XmlRpcClient client;
 
-    public SimpleClient(String basicAuth, String endPointUrl) {
-        this.basicAuth = basicAuth;
-        this.endPointUrl = endPointUrl;
+    private Client client;
+
+    public SimpleClient(String basicAuth, String endPointUrl) throws ClientConfigurationException {
+        this.client = new Client(basicAuth, endPointUrl);
     }
 
-    public Response call(){
-        return null;
+    public Response getVersion() {
+        return client.call(Client.Action.VERSION);
     }
+
 }
