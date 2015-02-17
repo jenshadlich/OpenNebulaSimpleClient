@@ -1,5 +1,6 @@
 package de.jeha.opennebula.client;
 
+import de.jeha.opennebula.client.vm.VirtualMachinePool;
 
 public class SimpleClient {
 
@@ -13,4 +14,7 @@ public class SimpleClient {
         return client.call(Client.Action.VERSION);
     }
 
+    public VirtualMachinePool getVirtualMachinePool() {
+        throw new UnsupportedOperationException("not yet implemented");
+    }
 }
